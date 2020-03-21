@@ -1,0 +1,9 @@
+jdbc:mysql://127.0.0.1:3307/jbone_zipkin?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC
+
+jdbc:mysql://127.0.0.1:3306/jbone_zipkin?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+
+
+http://sso.local.jbone.cn
+-Dspring.main.allow-bean-definition-overriding=true -DprofileActive=dev
+
+flushall

@@ -1,0 +1,40 @@
+package cn.jbone.system.api;
+
+import cn.jbone.common.dataobject.PagedResponseDO;
+import cn.jbone.common.rpc.Result;
+import cn.jbone.system.common.UserRequestDO;
+import cn.jbone.system.common.UserResponseDO;
+import cn.jbone.system.common.dto.request.ChangePasswordRequestDTO;
+import cn.jbone.system.common.dto.request.GithubUserLoginRequestDTO;
+import cn.jbone.system.common.dto.response.UserSecurityQuestionsResponseDTO;
+import feign.Headers;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+
+
+@RequestMapping("/user")
+public interface UserApi {
+
+    @RequestMapping(value = "/getUserSecurityQuestions",method = {RequestMethod.GET})
+    Result<List<UserSecurityQuestionsResponseDTO>> getUserSecurityQuestions(@RequestParam("username") String username);
+
+    @RequestMapping(value = "/changePassword",method = {RequestMethod.POST})
+    Result<Void> changePassword(@RequestBody ChangePasswordRequestDTO changePasswordRequestDTO);
+
+    @RequestMapping(value = "/thirdPartyUserLogin",method = {RequestMethod.POST})
+    Result<Void> thirdPartyUserLogin(@RequestBody GithubUserLoginRequestDTO githubUserLoginRequestDTO);
+
+    @RequestMapping(value = "/commonRequest",method = {RequestMethod.POST},consumes = MediaType.APPLICATION_JSON_VALUE)
+    @Headers("Content-Type: application/json")
+    Result<UserResponseDO> commonRequest(@RequestBody UserRequestDO userRequestDO);
+
+    @RequestMapping(value = "/commonSearch", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @Headers("Content-Type: application/json")
+    Result<PagedResponseDO<UserResponseDO>> commonSearch(@RequestBody UserRequestDO userRequestDO);
+
+}

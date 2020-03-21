@@ -1,0 +1,16 @@
+{
+  "@class" : "org.apereo.cas.support.oauth.services.OAuthRegisteredService",
+  "clientId" : "cmsadmin",
+  "clientSecret" : "cmsadmin",
+  "id" : 50002,
+  "serviceId" : "^http://cmsadmin\\.local\\.jbone\\.cn.*",
+  "name" : "Aceberg内容管理系统",
+  "description" : "Aceberg内容管理系统",
+  "generateRefreshToken": false,
+  "bypassApprovalPrompt": true,
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  },
+  "supportedGrantTypes": [ "java.util.HashSet", [ "authorization_code", "password","refresh_token","client_credentials" ] ],
+  "supportedResponseTypes": [ "java.util.HashSet", [ "code", "token","device_code" ] ]
+}

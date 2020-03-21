@@ -1,0 +1,9 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^http://jbone\\.cn.*",
+  "name" : "Aceberg Cms 门户",
+  "id" : 500003,
+  "description" : "Aceberg内容发布系统-前端展示系统",
+  "logoutType" : "BACK_CHANNEL",
+  "logoutUrl" : "http://jbone.cn/sso?client_name=CasClient"
+}

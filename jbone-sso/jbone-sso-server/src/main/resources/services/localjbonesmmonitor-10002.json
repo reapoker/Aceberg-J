@@ -1,0 +1,12 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^http://smmonitor\\.local\\.jbone\\.cn.*",
+  "name" : "Aceberg服务监控",
+  "id" : 10002,
+  "description" : "Aceberg服务监控系统，是基于Spring Cloud Zipkin做的调用链监控系统",
+  "logoutType" : "BACK_CHANNEL",
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  },
+  "logoutUrl" : "http://smmonitor.local.jbone.cn/sso?client_name=CasClient"
+}

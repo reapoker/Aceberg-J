@@ -1,0 +1,12 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^http://cmsportal\\.local\\.jbone\\.cn.*",
+  "name" : "Aceberg Cms 门户",
+  "id" : 50003,
+  "description" : "Aceberg Cms 门户",
+  "logoutType" : "BACK_CHANNEL",
+  "attributeReleasePolicy": {
+    "@class": "org.apereo.cas.services.ReturnAllAttributeReleasePolicy"
+  },
+  "logoutUrl" : "http://cmsportal.local.jbone.cn/sso?client_name=CasClient"
+}
